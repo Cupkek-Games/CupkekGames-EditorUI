@@ -1,0 +1,20 @@
+{
+  "name": "com.cupkekgames.editorui",
+  "displayName": "CupkekGames EditorUI",
+  "version": "0.1.0",
+  "author": {
+    "name": "CupkekGames",
+    "url": "https://www.docs.cupkek.games"
+  },
+  "unity": "6000.0",
+  "documentationUrl": "https://docs.cupkek.games/",
+  "description": "Reusable editor UIElements / IMGUI widgets: EditorColorPalette, EditorImGuiDrawing, FoldoutListView, FoldoutSection, TypePickerField, EditorTabView, SearchableDropdown, SpritePreviewUtility. Extracted from CupkekGames Core.",
+  "keywords": [
+    "Editor",
+    "UIElements",
+    "IMGUI",
+    "Widgets",
+    "CupkekGames"
+  ],
+  "dependencies": {}
+}
