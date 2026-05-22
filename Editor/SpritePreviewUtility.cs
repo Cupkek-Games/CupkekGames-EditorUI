@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+#pragma warning disable CS0618, CS0619 // Unity 6.6 alpha deprecated GetInstanceID; sprite cache key is local and the int form is fine.
+
 namespace CupkekGames.EditorUI
 {
     public static class SpritePreviewUtility
@@ -17,7 +19,7 @@ namespace CupkekGames.EditorUI
             if (preview != null) return preview;
 
             // Synchronous fallback: blit sprite rect from GPU
-            int id = sprite.GetInstanceID();
+            int id = sprite.GetHashCode();
             if (_cache.TryGetValue(id, out var cached) && cached != null)
                 return cached;
 
