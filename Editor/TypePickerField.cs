@@ -340,13 +340,17 @@ namespace CupkekGames.EditorUI
             if (type != null)
                 return type;
 
-            // Search all assemblies
+            // Search all assemblies. GetAssemblies() is the only runtime-safe
+            // way to resolve an arbitrary type by full name (TypeCache only
+            // covers derived/attributed types), so UAC0005 is suppressed here.
+#pragma warning disable UAC0005
             foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
             {
                 type = assembly.GetType(fullTypeName);
                 if (type != null)
                     return type;
             }
+#pragma warning restore UAC0005
 
             return null;
         }
