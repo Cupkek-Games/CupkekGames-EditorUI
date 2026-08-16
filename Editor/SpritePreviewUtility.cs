@@ -1,14 +1,16 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using Unity.Scripting.LifecycleManagement;
 
 #pragma warning disable CS0618, CS0619 // Unity 6.6 alpha deprecated GetInstanceID; sprite cache key is local and the int form is fine.
 
 namespace CupkekGames.EditorUI
 {
-    public static class SpritePreviewUtility
+    public static partial class SpritePreviewUtility
     {
-        private static readonly Dictionary<int, Texture2D> _cache = new();
+        [AutoStaticsCleanup]
+        private static Dictionary<int, Texture2D> _cache = new();
 
         public static Texture2D GetPreview(Sprite sprite)
         {
